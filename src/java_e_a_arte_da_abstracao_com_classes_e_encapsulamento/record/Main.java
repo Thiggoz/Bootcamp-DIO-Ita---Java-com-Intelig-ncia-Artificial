@@ -1,4 +1,4 @@
-package record;
+package java_e_a_arte_da_abstracao_com_classes_e_encapsulamento.record;
 
 public class Main {
 
