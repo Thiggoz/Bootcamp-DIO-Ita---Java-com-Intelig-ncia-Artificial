@@ -1,4 +1,4 @@
-package heranca_e_polimorfismo.explorando;
+package heranca_e_polimorfismo.explorando.domain;
 
 public non-sealed class Manager extends Employee {
 
@@ -11,6 +11,16 @@ public non-sealed class Manager extends Employee {
         this.login = login;
         this.password = password;
         this.commission = commission;
+    }
+
+    @Override
+    public String getCode() {
+        return "MN" + super.getCode();
+    }
+
+    @Override
+    public double getFullSalary() {
+        return this.salary + this.commission;
     }
 
     private String login;

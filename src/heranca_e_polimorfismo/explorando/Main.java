@@ -1,5 +1,9 @@
 package heranca_e_polimorfismo.explorando;
 
+import heranca_e_polimorfismo.explorando.domain.Employee;
+import heranca_e_polimorfismo.explorando.domain.Manager;
+import heranca_e_polimorfismo.explorando.domain.Salesman;
+
 public class Main {
     public static void main(String[] args) {
         Employee manager = new Manager();
@@ -9,7 +13,7 @@ public class Main {
 
     public static void printEmployee(Employee employee) {
 
-        System.out.printf("======= %s =======\n", employee.getClass().getCanonicalName());
+        System.out.printf("======= %s =======\n", employee.getClass().getSimpleName());
         switch (employee) {
             case Manager manager -> {
                 manager.setCode("123");
@@ -30,15 +34,19 @@ public class Main {
             case Salesman salesman -> {
                 salesman.setCode("456");
                 salesman.setName("Lucas");
-                salesman.setSalary(2000);
+                salesman.setSalary(2800);
                 salesman.setPercentPerSold(10);
+                salesman.setSoldAmount(1000);
 
                 System.out.println(salesman.getCode());
                 System.out.println(salesman.getName());
                 System.out.println(salesman.getSalary());
                 System.out.println(salesman.getPercentPerSold());
+                System.out.println(salesman.getSoldAmount());
             }
         }
+        System.out.println(employee.getFullSalary(500));
+        System.out.println(employee.getFullSalary());
         System.out.println("==============");
     }
 
